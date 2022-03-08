@@ -15,9 +15,33 @@ Supreme Court Argument Transcripts: https://www.supremecourt.gov/oral_arguments/
 Case Data and Justice Centered Data https://scdb.wustl.edu/data.php
 
 ## Challenges/Risks:
-Parsing transcripts formt he website might take awhile to build a dataset
+Parsing transcripts from the website might take a while to build a dataset
 
 ## Implementation:
 Two possible approaches for this taks: 
 1) Using oral arguments to predict who the winner is (petitioner/respondent) 
 2) Predicting individual Justice behaviour given justice and case dataset type
+
+
+
+# Proposal 2
+
+## Research Question/Hypothesis: 
+Perhaps investigate the effectiveness of transfer learning between datasets for use as an ML-powered autocomplete feature/recommendation system. Look at the effects of pretraining? Vary the architecture?
+
+## Previous Research/Novelty:
+There are loads of papers implementing BERT models( e.g., https://arxiv.org/pdf/1904.06690.pdf, https://aclanthology.org/2020.ecnlp-1.8.pdf, etc.), just need to find a novelty aspect to research. 
+
+## Papers:
+https://towardsdatascience.com/build-your-own-movie-recommender-system-using-bert4rec-92e4e34938c5 (https://github.com/CVxTz/recommender_transformer/blob/main/notebooks/inference.ipynb)
+
+## Possible Datasets:
+https://jmcauley.ucsd.edu/data/amazon/ - Amazon Product Datasets (e.g., music, movies, etc.)
+https://cseweb.ucsd.edu/~jmcauley/datasets.html - Recommender Systems and Personalization Datasets (e.g., recipes)
+
+## Challenges/Risks:
+Original research question.
+
+## Implementation:
+Implement a transformer based recommender architecture (i.e., BERT model)
+
