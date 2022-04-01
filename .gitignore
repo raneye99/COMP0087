@@ -131,3 +131,4 @@ dmypy.json
 #data
 *.json.gz
 *data/
+test.ipynb
