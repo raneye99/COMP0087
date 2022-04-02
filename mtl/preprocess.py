@@ -207,9 +207,10 @@ def data_processing(five_sentiments = True, num_classes = 7, num_classes1 = 2, e
             '0.0': 0,
             '1.0': 1
         }
+    
 
-    y_train = [encoding[str(x)] for x in data_train.sentiment]
-    y_test = [encoding[str(x)] for x in data_test.sentiment]
+    print(encoding)
+
     y_train1 = [encoding1[str(x)] for x in data_train.emotion_1]
     y_test1 = [encoding1[str(x)] for x in data_test.emotion_1]
     y_train2 = [encoding1[str(x)] for x in data_train.emotion_2]
