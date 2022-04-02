@@ -67,7 +67,7 @@ def data_processing(five_sentiments = True, num_classes = 7, num_classes1 = 2, e
     emotion_test = pickle.load(open('data/mosei/MOSEI/test_emotion.p', "rb"))
     sentiment_test= pickle.load(open('data/mosei/MOSEI/test_sentiment.p', "rb"))
     #change sentiement to be int
-    sentiment_val = {k: np.round(v) for k,v in sentiment_val.items()}
+    sentiment_test = {k: np.round(v) for k,v in sentiment_test.items()}
 
     col_name = ['sentences','emotion','sentiment']
     
