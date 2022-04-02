@@ -51,23 +51,23 @@ def data_processing(five_sentiments = True, num_classes = 7, num_classes1 = 2, e
     text_tr = pickle.load(open('data/mosei/MOSEI/train_sentences.p',"rb"))
     emotion_tr = pickle.load(open('data/mosei/MOSEI/train_emotion.p', "rb"))
     sentiment_tr = pickle.load(open('data/mosei/MOSEI/train_sentiment.p', "rb"))
-    #change sentimement to be binary
-    # sentiment_tr = {k: np.sign(v) for k,v in sentiment_tr.items()}
+    #change sentimement to be int
+    sentiment_tr = {k: np.round(v) for k,v in sentiment_tr.items()}
 
 
     #valid
     text_val = pickle.load(open('data/mosei/MOSEI/valid_sentences.p',"rb"))
     emotion_val = pickle.load(open('data/mosei/MOSEI/valid_emotion.p', "rb"))
     sentiment_val = pickle.load(open('data/mosei/MOSEI/valid_sentiment.p', "rb"))
-    #change sentiement to be binary
-    # sentiment_val = {k: np.sign(v) for k,v in sentiment_val.items()}
+    #change sentiement to be int
+    sentiment_val = {k: np.round(v) for k,v in sentiment_val.items()}
 
     #test
     text_test = pickle.load(open('data/mosei/MOSEI/test_sentences.p',"rb"))
     emotion_test = pickle.load(open('data/mosei/MOSEI/test_emotion.p', "rb"))
     sentiment_test= pickle.load(open('data/mosei/MOSEI/test_sentiment.p', "rb"))
-    #change sentiement to be binary
-    # sentiment_val = {k: np.sign(v) for k,v in sentiment_val.items()}
+    #change sentiement to be int
+    sentiment_val = {k: np.round(v) for k,v in sentiment_val.items()}
 
     col_name = ['sentences','emotion','sentiment']
     
