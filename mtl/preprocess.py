@@ -69,7 +69,7 @@ def data_processing(five_sentiments = True, num_classes = 7, num_classes1 = 2, e
     #change sentiement to be binary
     # sentiment_val = {k: np.sign(v) for k,v in sentiment_val.items()}
 
-    col_name = ['text','emotion','sentiment']
+    col_name = ['scentences','emotion','sentiment']
     
     #create pandas dataframe for train validation and test set
     df_train = pd.DataFrame.from_dict([text_tr, emotion_tr, sentiment_tr]).T
