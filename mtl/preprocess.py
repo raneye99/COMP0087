@@ -181,11 +181,11 @@ def data_processing(five_sentiments = True, num_classes = 7, num_classes1 = 2, e
 
     if five_sentiments == True:
         encoding = {
-            '1.0': 0,
-            '2.0': 1,
-            '3.0': 2,
-            '4.0': 3,
-            '5.0': 4
+            '1.': 0,
+            '2.': 1,
+            '3.': 2,
+            '4.': 3,
+            '5.': 4
         }
 
         encoding1 = {
