@@ -15,7 +15,7 @@ def test_model(file_name, mtl, data_y, data_x, num_of_sentiments = True, ):
         predictions = np.argmax(predictions, axis=1)
         predictions = [class_names[pred] for pred in predictions]
 
-        data_test = data_y
+        data_test = [str(x) for x in data_y.sentiment.tolist()]
 
         print("Accuracy: {:.2f}%".format(accuracy_score(data_test, predictions) * 100))
         print("\nF1 Score: {:.2f}".format(f1_score(data_test, predictions, average='micro') * 100))
@@ -32,7 +32,7 @@ def test_model(file_name, mtl, data_y, data_x, num_of_sentiments = True, ):
         predictions = np.argmax(predictions, axis=1)
         predictions = [class_names[pred] for pred in predictions]
 
-        data_test = data_y
+        data_test = [str(x) for x in data_y.sentiment.tolist()]
 
         print("Accuracy: {:.2f}%".format(accuracy_score(data_test, predictions) * 100))
         print("\nF1 Score: {:.2f}".format(f1_score(data_test, predictions, average='micro') * 100))
