@@ -60,7 +60,7 @@ def train_model(vocab_size, embedd_matrix, model_name, data_x, data_y, val_x, va
         mod.save(saved_model_name)
     
     if model_name == 'mtl_five_sentiments':
-        mod = net().mtl_five_sentiments_model(num_classes1 = 2, embed_num_dims=300, max_seq_len=500, vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout)
+        mod = net().mtl_five_sentiments_model(num_classes1 = 2, embed_num_dims=300, max_seq_len=500, vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, num_classes = 5)
         mod.compile(loss = {'s':'categorical_crossentropy',
                             'e1':'categorical_crossentropy',
                             'e2':'categorical_crossentropy',
@@ -132,7 +132,7 @@ def train_model(vocab_size, embedd_matrix, model_name, data_x, data_y, val_x, va
 
     elif model_name == 'gru_one_task_sentiment_five':
 
-        mod = net().gru_one_task_sentiment_five(vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, embed_num_dims =300, max_seq_len=500)
+        mod = net().gru_one_task_sentiment_five(vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, embed_num_dims =300, max_seq_len=500, num_classes = 5)
         mod.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
         if tensorboard == True:
             log_dir="logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -156,7 +156,7 @@ def train_model(vocab_size, embedd_matrix, model_name, data_x, data_y, val_x, va
 
     elif model_name == 'lstm_one_task_sentiment':
 
-        mod = net().lstm_one_task_sentiment(vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, embed_num_dims = 300, max_seq_len=500)
+        mod = net().lstm_one_task_sentiment(vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, embed_num_dims = 300, max_seq_len=500, num_classes=7)
         mod.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
         if tensorboard == True:
             log_dir="logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -180,7 +180,7 @@ def train_model(vocab_size, embedd_matrix, model_name, data_x, data_y, val_x, va
         
     elif model_name == 'lstm_one_task_sentiment_five':
 
-        mod = net().lstm_one_task_sentiment_five(vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, embed_num_dims = 300, max_seq_len=500)
+        mod = net().lstm_one_task_sentiment_five(vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, embed_num_dims = 300, max_seq_len=500, num_classes=5)
         mod.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
         if tensorboard == True:
             log_dir="logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
