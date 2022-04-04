@@ -60,7 +60,7 @@ def train_model(vocab_size, embedd_matrix, model_name, data_x, data_y, val_x, va
         mod.save(saved_model_name)
     
     if model_name == 'mtl_five_sentiments':
-        mod = net().mtl_five_sentiments_model(vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout, num_classes1 = 2, embed_num_dims=300, max_seq_len=500)
+        mod = net().mtl_five_sentiments_model(num_classes1 = 2, embed_num_dims=300, max_seq_len=500, vocab_size = vocab_size, embedd_matrix = embedd_matrix, gru_output_size=gru_output_size, dropout=dropout, recurrent_dropout=recurrent_dropout)
         mod.compile(loss = {'s':'categorical_crossentropy',
                             'e1':'categorical_crossentropy',
                             'e2':'categorical_crossentropy',
