@@ -110,7 +110,6 @@ def data_processing(five_sentiments = True, num_classes = 7, num_classes1 = 2, e
         data_val = data_val.drop(data_val[data_val.sentiment == 0.0].index)
         data_val = data_val.drop(data_val[data_val.sentiment == 6.0].index)
 
-    #even out the dataset by only allowing 3000 sentences with sentiment 3.0
     data_train = shuffle(data_train)
 
     X_train = data_train.sentences
